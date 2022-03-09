@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: papayawhip;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+#root {
+  height: 100vh;
+
+  display: grid;
+  grid-template: repeat(100, 1fr) / repeat(100, 1fr);
+}

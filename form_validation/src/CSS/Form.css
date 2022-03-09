@@ -1,0 +1,35 @@
+#visualizer {
+    grid-row: 1 / span 10;
+    grid-column: 1 / span 100;
+
+    background-color: peru;
+    white-space: nowrap;
+
+    display: grid;
+    grid-template: repeat(100, 1fr) / repeat(100, 1fr);
+}
+
+.circle {
+    background-color: peachpuff;
+    border: solid .2vh violet;
+    border-radius: 50%;
+    width: 6vh;
+    height: 6vh;
+    grid-row: 50;
+}
+
+#circle1 {
+    grid-column: 20;
+}
+
+#circle2 {
+    grid-column: 40;
+}
+
+#circle3 {
+    grid-column: 60;
+}
+
+#circle4 {
+    grid-column: 80;
+}

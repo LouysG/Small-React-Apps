@@ -1,0 +1,89 @@
+#form {
+  grid-row: 6 / span 90;
+  grid-column: 6 / span 55;
+
+  background-color: navajowhite;
+  border: solid .75vh burlywood;
+  border-radius: 2%;
+
+  display: grid;
+  grid-template: repeat(100, 1fr) / repeat(100, 1fr);
+}
+
+#cart {
+  grid-row: 6 / span 75;
+  grid-column: 66 / span 30;
+
+  background-color: navajowhite;
+  border: solid .75vh burlywood;
+  border-radius: 2%;
+
+  display: grid;
+  grid-template: repeat(100, 1fr) / repeat(100, 1fr);
+}
+
+.cartItem {
+  grid-column: 6 / span 90;
+  background-color: blanchedalmond;
+  font-size: 2vh;
+  border: solid .5vh burlywood;
+  border-radius: 2%;
+
+  display: grid;
+  grid-template: repeat(100, 1fr) / repeat(100, 1fr);
+}
+
+#cartItem1 {
+  grid-row: 4 / span 15;
+}
+
+#cartItem2 {
+  grid-row: 22 / span 15;
+}
+
+#cartItem3 {
+  grid-row: 40 / span 15;
+}
+
+#cartItem4 {
+  grid-row: 58 / span 15;
+}
+
+#cartTotal {
+  grid-row: 76 / span 22;
+  grid-column: 6 / span 90;
+
+  background-color: transparent;
+
+  display: grid;
+  grid-template: repeat(100, 1fr) / repeat(100, 1fr);
+}
+
+.imgWrapper {
+  grid-row: 1 / span 100;
+  grid-column: 1 / span 2;
+  display: flex;
+}
+
+.itemName {
+  grid-row: 40 / span 20;
+  grid-column: 30 / span 50;
+  white-space: nowrap;
+  background-color: transparent;
+}
+
+.itemQuantity {
+  grid-row: 65 / span 20;
+  grid-column: 30 / span 50;
+  white-space: nowrap;
+  background-color: transparent;
+}
+
+.itemCost {
+  grid-row: 65 / span 20;
+  grid-column: 75 / span 40;
+  white-space: nowrap;
+  background-color: transparent;
+}
+
+

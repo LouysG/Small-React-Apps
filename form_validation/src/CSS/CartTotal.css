@@ -1,0 +1,38 @@
+#left {
+    grid-column: 3 / span 50;
+    background-color: transparent;
+}
+
+#right {
+    grid-column: 75 / span 50;
+    background-color: transparent;
+}
+
+.line1 {
+    grid-row: 6 / span 15;
+    white-space: nowrap;
+    font-size: 2.5vh;
+    font-weight: bold;
+}
+
+.line2 {
+    grid-row: 26 / span 15;
+    font-size: 2vh;
+}
+
+.line3 {
+    grid-row: 43 / span 15;
+    font-size: 2vh;
+}
+
+.line4 {
+    grid-row: 60 / span 15;
+    font-size: 2vh;
+}
+
+.line5 {
+    grid-row: 78 / span 20;
+    font-size: 3vh;
+    font-weight: bold;
+}
+
