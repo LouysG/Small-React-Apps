@@ -1,13 +1,14 @@
+import CircleIcon from './CircleIcon.js'
 
 export default function StageVisualizer (props) {
 
 
     return (
         <div id='visualizer'>
-            <div className='circle' id='circle1'></div>
-            <div className='circle' id='circle2'></div>
-            <div className='circle' id='circle3'></div>
-            <div className='circle' id='circle4'></div>
+            <CircleIcon id={1} stage={props.stage}></CircleIcon>
+            <CircleIcon id={2} stage={props.stage}></CircleIcon>
+            <CircleIcon id={3} stage={props.stage}></CircleIcon>
+            <CircleIcon id={4} stage={props.stage}></CircleIcon>
         </div>
     )
 }

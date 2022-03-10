@@ -2,7 +2,7 @@
     grid-row: 1 / span 10;
     grid-column: 1 / span 100;
 
-    background-color: peru;
+    background-color: transparent;
     white-space: nowrap;
 
     display: grid;
@@ -10,11 +10,11 @@
 }
 
 .circle {
-    background-color: peachpuff;
-    border: solid .2vh violet;
+    background-color: pink;
+    border: solid .2vh palevioletred;
     border-radius: 50%;
-    width: 6vh;
-    height: 6vh;
+    width: 3vh;
+    height: 3vh;
     grid-row: 50;
 }
 
@@ -32,4 +32,194 @@
 
 #circle4 {
     grid-column: 80;
+}
+
+.formProper {
+    grid-row: 11 / span 90;
+    grid-column: 1 / span 100;
+
+    background-color: transparent;
+
+    display: grid;
+    grid-template: repeat(100, 1fr) / repeat(100, 1fr);
+}
+
+.stageName {
+    grid-row: 1 / span 10;
+    grid-column: 18 / span 92;
+
+    background-color: transparent;
+    font-size: 4vh;
+    font-weight: bold;
+}
+
+.submit {
+    grid-row: 65 / span 5;
+    grid-column: 46 / span 10;
+
+    font-size: 2.5vh;
+}
+
+.formElement {
+    grid-column: 18 / span 82;
+    
+    font-size: 3vh;
+    background-color: transparent;
+
+    display: block;
+}
+
+#nameLabel {
+    grid-row: 10 / span 5;
+}
+
+#nameElement {
+    width: 79%;
+    
+    font-size: 3vh;
+
+    display: block;
+}
+
+#addressLabel {
+    grid-row: 20 / span 5;
+}
+
+.addressElement {
+    width: 79%;
+    margin-bottom: .75vh;
+    
+    font-size: 3vh;
+
+    display: block;
+}
+
+.stateLine {
+    width: 79%;
+
+    background-color: transparent;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+#city {
+    width: 60%;
+    font-size: 3vh;
+}
+
+#state {
+    font-size: 3vh;
+}
+
+#zip {
+    width: 20%;
+
+    font-size: 3vh;
+}
+
+#phoneLabel {
+    grid-row: 42 / span 5;
+}
+
+#phoneElement {
+    width: 25%;
+    
+    font-size: 3vh;
+
+    display: block;
+}
+
+#emailLabel {
+    grid-row: 52 / span 5;
+}
+
+#emailElement {
+    width: 79%;
+    
+    font-size: 3vh;
+
+    display: block;
+}
+
+#sameAsShippingLabel {
+    grid-column: 18 / span 92;
+    grid-row: 32 / span 5;
+
+    font-size: 2vh;
+    background-color: transparent;
+    
+}
+
+#nameOnCardLabel {
+    grid-row: 40 / span 5;
+}
+
+#nameOnCardElement {
+    width: 79%;
+    
+    font-size: 3vh;
+
+    display: block;
+}
+
+#cardNumLabel {
+    grid-row: 50 / span 5;
+}
+
+#cardNumElement {
+    width: 40%;
+    
+    font-size: 3vh;
+
+    display: block;
+}
+
+#expLabel {
+    grid-column: 58 / span 20;
+    grid-row: 50 / span 5;
+}
+
+#expElement {
+    width: 45%; 
+
+    font-size: 3vh;
+
+    display: block;
+}
+
+#cvvLabel {
+    grid-row: 50 / span 5;
+    grid-column: 75 / span 10;
+}
+
+#cvvElement {
+    width: 78%;
+    
+    font-size: 3vh;
+
+    display: block;
+}
+
+#trackingNumber {
+    grid-row: 10 / 10;
+    grid-column: 18 / 82;
+
+    background-color: transparent;
+    font-size: 2.5vh;
+}
+
+#recText {
+    grid-row: 30/ span 5;
+    grid-column: 18 / 82; 
+
+    background-color: transparent;
+    font-size: 2.5vh;
+}
+
+#recs {
+    grid-row: 35 / span 30;
+    grid-column: 18 / 82;
+
+    display: flex;
 }
