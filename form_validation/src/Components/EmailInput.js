@@ -1,7 +1,7 @@
 
 
 
-export default function EmailInput () {
+export default function EmailInput (props) {
 
 
     return (
@@ -9,7 +9,10 @@ export default function EmailInput () {
             Email
             <input 
                 id='emailElement'
-                type='text'>
+                type='text'
+                name='email'
+                value={props.state.userInput.email}
+                onChange={props.state.handleChange}>
             </input>
         </label>
     )

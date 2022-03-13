@@ -201,6 +201,10 @@
     display: block;
 }
 
+#shipping {
+    grid-row: span 5
+}
+
 #trackingNumber {
     grid-row: 10 / 10;
     grid-column: 18 / 82;

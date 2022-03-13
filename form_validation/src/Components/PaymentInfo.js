@@ -5,21 +5,39 @@ export default function PaymentInfo (props) {
 
     return (
         <>
-            <label class='formElement' id='nameOnCardLabel'>
+            <label className='formElement' id='nameOnCardLabel'>
                 Name on card
-                <input id='nameOnCardElement' type='text'></input>
+                <input id='nameOnCardElement' 
+                    type='text'
+                    name='nameOnCard'
+                    value={props.state.userInput.nameOnCard}
+                    onChange={props.state.handleChange}>
+                </input>
             </label>
-            <label class='formElement' id='cardNumLabel'>
+            <label className='formElement' id='cardNumLabel'>
                 Card Number
-                <input id='cardNumElement' type='text'></input>
+                <input id='cardNumElement' 
+                    type='text'
+                    name='cardNumber'
+                    value={props.state.userInput.cardNumber}
+                    onChange={props.state.handleChange}>
+                </input>
             </label>
-            <label class='formElement' id='expLabel'>
+            <label className='formElement' id='expLabel'>
                 Exp.
-                <input id='expElement'></input>
+                <input id='expElement'
+                    name='expiration'
+                    value={props.state.userInput.expiration}
+                    onChange={props.state.handleChange}>
+                </input>
             </label>
-            <label class='formElement' id='cvvLabel'>
+            <label className='formElement' id='cvvLabel'>
                 CVV
-                <input id='cvvElement'></input>
+                <input id='cvvElement'
+                    name='cvv'
+                    value={props.state.userInput.cvv}
+                    onChange={props.state.handleChange}>
+                </input>
             </label>
         </>
     )

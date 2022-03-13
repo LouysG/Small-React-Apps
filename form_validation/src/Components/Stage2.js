@@ -7,14 +7,16 @@ export default function Stage2 (props) {
     (props.stage === 2) ? display = 'grid' : display = 'none';
 
     return (
-        <form className='formProper' style={{display: `${display}`}}>
+        <form className='formProper' style={{display: `${display}`}} onSubmit={props.state.handleSubmit}>
             <p className='stageName'>Payment Information</p>
-            <AddressInput stage={props.stage}/>
+            <AddressInput stage={props.stage} state={props.state}/>
             <label id='sameAsShippingLabel'>
-                <input type='checkbox' id='sameAsShippingElement'></input>
+                <input type='checkbox' 
+                    id='sameAsShippingElement'
+                    onClick={props.state.handleUseSameAddress}></input>
                 {' '}Use shipping address
             </label>
-            <PaymentInfo/>
+            <PaymentInfo state={props.state}/>
             <button className='submit' type='submit'>Next</button>
         </form>
 
