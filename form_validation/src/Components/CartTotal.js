@@ -2,12 +2,16 @@ import '../CSS/CartTotal.css'
 
 export default function CartTotal (props) {
 
+    const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    });
+
     let items = 151.91
-    let shipping = props.shipping ? props.shipping : '0.00'
-    let tax = props.taxRate ? props.taxRate * items : '0.00'
-    let total = items 
-        + (props.shipping ? props.shipping : 0) 
-        + (props.taxRate ? props.taxRate : 0);
+    let shipping = parseFloat(props.shipping)
+    let tax = parseFloat(0.07 * items)
+    let total = items + shipping + tax
+    console.log(items, shipping, tax, total)
 
     return (
         <div id='cartTotal'>
@@ -17,10 +21,10 @@ export default function CartTotal (props) {
             <p className='line4' id='left'>Tax</p>
             <p className='line5' id='left'>TOTAL</p>
 
-            <p className='line2' id='right'>${items}</p>
-            <p className='line3' id='right'>${shipping}</p>
-            <p className='line4' id='right'>${tax}</p>
-            <p className='line5' id='right'>${total}</p>
+            <p className='line2' id='right'>{formatter.format(items)}</p>
+            <p className='line3' id='right'>{formatter.format(shipping)}</p>
+            <p className='line4' id='right'>{formatter.format(tax)}</p>
+            <p className='line5' id='right'>{formatter.format(total)}</p>
         </div>
     )
 }

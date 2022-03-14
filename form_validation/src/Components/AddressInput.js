@@ -2,8 +2,12 @@
 
 
 export default function AddressInput (props) {
-    let style;
+    let position;
     let nameSet;
+    let addressBorder;
+    let cityBorder;
+    let stateBorder;
+    let zipBorder;
 
     if (props.stage === 1) {
         nameSet = {
@@ -23,12 +27,29 @@ export default function AddressInput (props) {
         }
     }
 
-    (props.stage === 2) ? style = {gridRow: '10 / span 5'} : style ={};
+    (props.stage === 2) ? position = {gridRow: '10 / span 5'} : position ={};
 
+    if (props.state.submitFail) {
+        const zipPattern = new RegExp(/^\d\d\d\d\d$/)
+        if (!props.state.userInput.address1) {
+            addressBorder = {border: '.3vh solid red'}
+        }
+        if (!props.state.userInput.city) {
+            cityBorder = {border: '.3vh solid red'}
+        }
+
+        if (!props.state.userInput.state) {
+            stateBorder = {border: '.3vh solid red'}
+        }
+
+        if (!zipPattern.test(props.state.userInput.zip)) {
+            stateBorder = {border: '.3vh solid red'}
+        }
+    }
 
 
     return (
-        <label className='formElement' id='addressLabel' style={style}>
+        <label className='formElement' id='addressLabel' style={position}>
             Address
             <input 
                 className='addressElement'
@@ -36,7 +57,8 @@ export default function AddressInput (props) {
                 name={nameSet.address1}
                 type='text'
                 value={props.state.userInput[nameSet.address1]}
-                onChange={props.state.handleChange}>
+                onChange={props.state.handleChange}
+                style={addressBorder}>
             </input>
             <input 
                 className='addressElement'
@@ -52,12 +74,14 @@ export default function AddressInput (props) {
                     type='text'
                     name={nameSet.city}
                     value={props.state.userInput[nameSet.city]}
-                    onChange={props.state.handleChange}>
+                    onChange={props.state.handleChange}
+                    style={cityBorder}>
                 </input>
                 <select id='state'
                         name={nameSet.state}
                         value={props.state.userInput[nameSet.state]}
-                        onChange={props.state.handleChange}>
+                        onChange={props.state.handleChange}
+                        style={stateBorder}>
                     <option value=''> </option>
                     <option value='AL'>AL</option>
                     <option value='AK'>AK</option>
@@ -116,7 +140,8 @@ export default function AddressInput (props) {
                     name={nameSet.zip}
                     type='text'
                     value={props.state.userInput[nameSet.zip]}
-                    onChange={props.state.handleChange}>
+                    onChange={props.state.handleChange}
+                    style={zipBorder}>
                 </input>
             </div>
         </label>

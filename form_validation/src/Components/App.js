@@ -1,4 +1,5 @@
 import '../CSS/App.css';
+import { useState } from 'react'
 import Form from './Form';
 import CartItem from './CartItem';
 import CartTotal from './CartTotal';
@@ -8,10 +9,16 @@ import petals from '../Resources/petals.jpg'
 import gorrila from '../Resources/gorrila_suit.jpg'
 
 function App() {
+  const [shipping, setShipping] = useState(0.0)
+  const [taxRate, setTaxRate] = useState(0.0)
+
+  function handleShippingChange (e) {
+    setShipping(e.target.value)
+  }
 
   return (
     <>
-      <Form/>
+      <Form handleShippingChange={handleShippingChange}/>
       <div id='cart'>
         <CartItem id='cartItem1'
           image={candle}
@@ -33,7 +40,7 @@ function App() {
           name='Gorilla Suit'
           quantity={1}
           cost='$85.99' />
-        <CartTotal/>
+        <CartTotal shipping={shipping} taxRate={taxRate}/>
       </div>
     </>
   );

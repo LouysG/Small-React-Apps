@@ -2,6 +2,12 @@
 
 export default function NameInput (props) {
     let style;
+
+    if (props.state.submitFail) {
+        if (!props.state.userInput.name) {
+            style = {border: '.3vh solid red'}
+        }
+    }
     
     return (
         <label className='formElement' id='nameLabel'>

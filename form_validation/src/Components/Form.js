@@ -6,8 +6,9 @@ import Stage2 from './Stage2';
 import Stage3 from './Stage3';
 import Stage4 from './Stage4';
 
-export default function Form () {
+export default function Form (props) {
     const [stage, setStage] = useState(1)
+    const [submitFail, setSubmitFail] = useState(false)
     const [userInput, setUserInput] = useState({
         name: null,
         address1: null,
@@ -26,7 +27,7 @@ export default function Form () {
         cardNumber: null,
         expiration: null,
         cvv: null,
-        shippingMethod: null
+        shipping: null
     })
     
 
@@ -63,15 +64,55 @@ export default function Form () {
     }
 
     function handleSubmit(e) {
+        const zipPattern = new RegExp(/^\d\d\d\d\d$/)
+        const phonePattern = new RegExp(/^\d{3}-?\d{3}-?\d{4}$/)
+        const emailPattern = new RegExp(/.+@.+\..+/)
+        const cardNumberPattern = new RegExp(/^\d{4}\s?\d{4}\s?\d{4}\s?\d{4}$/)
+        const expirationPattern = new RegExp(/^[0-3]?\d\/?\d\d$/)
+        const cvvPattern = new RegExp(/^\d{3}$/)
+        let isValid = false;
+        if (stage === 1) {
+            if (
+                userInput.name
+                && userInput.address1
+                && userInput.city
+                && userInput.state
+                && (zipPattern.test(userInput.zip))
+                && (phonePattern.test(userInput.phone))
+                && (emailPattern.test(userInput.email))
+            ) {isValid = true}
+        } else if (stage === 2) {
+            if (
+                userInput.address1
+                && userInput.city
+                && userInput.state
+                && (zipPattern.test(userInput.zip))
+                && userInput.nameOnCard
+                && (cardNumberPattern.test(userInput.cardNumber))
+                && (expirationPattern.test(userInput.expiration))
+                && (cvvPattern.test(userInput.cvv))
+            )
+            isValid = true
+        } else if (stage === 3) {
+            if (userInput.shipping) {isValid = true}
+        }
+
+        if (!isValid) {
+            e.preventDefault()
+            setSubmitFail(true)
+            return false
+        }
         setStage(stage + 1)
-        //e.preventDefault()
+        setSubmitFail(false)
     }
 
     let state = {
         userInput: userInput,
         handleChange: handleChange,
         handleUseSameAddress: handleUseSameAddress,
-        handleSubmit: handleSubmit
+        handleSubmit: handleSubmit,
+        handleShippingChange: props.handleShippingChange,
+        submitFail: submitFail
     }
 
 

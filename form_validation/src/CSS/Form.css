@@ -205,6 +205,16 @@
     grid-row: span 5
 }
 
+#hiddenShippingMessage {
+    grid-row: 26 / span 5;
+    grid-column: 18 / 82;
+
+    font-size: 2vh;
+    font-style: italic;
+    background-color: transparent;
+    color: red;
+}
+
 #trackingNumber {
     grid-row: 10 / 10;
     grid-column: 18 / 82;
