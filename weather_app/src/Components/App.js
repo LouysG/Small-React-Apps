@@ -4,7 +4,7 @@ import InputBar from './InputBar';
 import DisplayPane from './DisplayPane';
 import Clear from '../Resources/clear.jpg';
 import Clouds from '../Resources/clouds.jpg';
-import Lightning from '../Resources/lightning.jpg';
+import Lightning from '../Resources/Lightning.jpg';
 import Fog from '../Resources/fog.jpg';
 import Rain from '../Resources/rain.jpg';
 import Snow from '../Resources/snow.jpg';
@@ -12,7 +12,7 @@ import Snow from '../Resources/snow.jpg';
 
 
 function App() {
-  const openWeatherKey = '4db40d1851ac13320c53aa71b0f91918'
+  const openWeatherKey = ''
   const geoCodeUrl = 'http://api.openweathermap.org/geo/1.0/direct'
   const forecastUrl ='https://api.openweathermap.org/data/2.5/onecall'
   const [forecast, setForecast] = useState({
@@ -86,7 +86,7 @@ function App() {
   } else if (forecast.type >= 300 && forecast.type < 600) {
     root.style.backgroundImage = `url(${Rain})`
   } else if (forecast.type >= 200 && forecast.type < 300) {
-    root.style.backgroundImage = `url(${Clear})`
+    root.style.backgroundImage = `url(${Lightning})`
   }
   
 
