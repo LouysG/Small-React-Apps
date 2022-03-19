@@ -4,7 +4,7 @@ import InputBar from './InputBar';
 import DisplayPane from './DisplayPane';
 import Clear from '../Resources/clear.jpg';
 import Clouds from '../Resources/clouds.jpg';
-import Lightning from '../Resources/Lightning.jpg';
+import Lightning from '../Resources/lightning.jpg';
 import Fog from '../Resources/fog.jpg';
 import Rain from '../Resources/rain.jpg';
 import Snow from '../Resources/snow.jpg';
@@ -12,7 +12,7 @@ import Snow from '../Resources/snow.jpg';
 
 
 function App() {
-  const openWeatherKey = ''
+  const openWeatherKey = '8d918c58509a13cde55037b22300dd81'
   const geoCodeUrl = 'http://api.openweathermap.org/geo/1.0/direct'
   const forecastUrl ='https://api.openweathermap.org/data/2.5/onecall'
   const [forecast, setForecast] = useState({
@@ -49,7 +49,7 @@ function App() {
 
     // Get current forecast for lat/lon coordinates
     try {
-      const forecastEndpoint = `${forecastUrl}?lat=${lat}&lon=${lon}&appid=${openWeatherKey}`
+      const forecastEndpoint = `${forecastUrl}?lat=${lat}&lon=${lon}&exclude=${['minutely', 'hourly', 'alerts']}&appid=${openWeatherKey}`
       const response = await fetch(forecastEndpoint)
       console.log(response)
       if (response.ok) {
