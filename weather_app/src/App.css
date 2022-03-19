@@ -25,3 +25,63 @@ form {
   border: 0.4vh solid black;
   border-radius: 1vh;
 }
+
+#displayPane {
+  grid-row: 42 / span 50;
+  grid-column: 35 / span 30;
+
+  text-shadow: 
+    -1px -1px 0px #000,
+    0px -1px 0px #000,
+    1px -1px 0px #000,
+    -1px 0px 0px #000,
+    1px  0px 0px #000,
+    -1px 1px 0px #000,
+    0px 1px 0px #000,
+    1px 1px 0px #000;
+
+  display: grid;
+  grid-template: repeat(100, 1fr) / repeat(100, 1fr);
+}
+
+#currentTemp {
+  grid-row: 11 / span 50;
+  grid-column: 21 / span 60; 
+
+  font-size: 14vh;
+}
+
+#highTemp {
+  grid-row: 66 / span 25;
+  grid-column: 11 / span 30; 
+}
+
+#lowTemp {
+  grid-row: 66 / span 25;
+  grid-column: 61 / span 30; 
+}
+
+.label {
+  font-size: 3vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.smallText {
+  font-size: 5vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bigText {
+  font-size: 14vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

@@ -26,7 +26,7 @@ export default function InputBar (props) {
                     id='bar'
                     type='text'>
                 </input>
-                <button id='submit' type='submit'></button>
+                <button id='submit' type='submit' style={{display: 'none'}}></button>
             </form>
         </>
     )
