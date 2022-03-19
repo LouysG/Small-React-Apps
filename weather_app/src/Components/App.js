@@ -12,7 +12,7 @@ import Snow from '../Resources/snow.jpg';
 
 
 function App() {
-  const openWeatherKey = '8d918c58509a13cde55037b22300dd81'
+  const openWeatherKey = ''
   const geoCodeUrl = 'http://api.openweathermap.org/geo/1.0/direct'
   const forecastUrl ='https://api.openweathermap.org/data/2.5/onecall'
   const [forecast, setForecast] = useState({
